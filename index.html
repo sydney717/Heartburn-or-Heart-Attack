@@ -6,7 +6,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
  
 Authors in chronological order of contribution:
-[ADD YOUR NAME HERE]
+[Sydney Griser]
 	
 Further Information:
 https://www.w3schools.com/w3css/default.asp
@@ -17,15 +17,15 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-[ADD YOUR DISCRIPTION HERE]
+[differentiate between heartburn and heart attack]
 	
 Known Issues:
-[ADD ANY KNOWN ISSUES HERE]
+[none]
 
 -->
 	
    <head> 
-      <title>This or That</title>  
+      <title>Heartburn or Heart Attack?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -34,24 +34,24 @@ Known Issues:
 
 
 <script>
-        var allergy_count = 0;//variable to keep track of the number of times the user answers a question that leads to the allergy diagnosis 
-        var cold_count = 0;//variable to keep track of the number of times the user answers a question that leads to the cold diagnosis 
+        var heartburn_count = 0;//variable to keep track of the number of times the user answers a question that leads to the heartburn diagnosis 
+        var heartattack_count = 0;//variable to keep track of the number of times the user answers a question that leads to the heart attack diagnosis 
 
-        function allergyAdd(){ //this function is used to add an additional count to allergy_count each time it is called
-            allergy_count = allergy_count + 1; 
+        function heartburnAdd(){ //this function is used to add an additional count to heartburn_count each time it is called
+            heartburn_count = heartburn_count + 1; 
 		//alert("allergy_count is " + allergy_count); I wanted to further clarify that the alert is displaying the count for allergy_count, but this code is now irrelevant
         }
 
-        function coldAdd(){
-            cold_count = cold_count + 1;//this function is used to add an additional count to cold_count each time it is called
+        function heartattackAdd(){
+            heartattack_count = heartattack_count + 1;//this function is used to add an additional count to heartattack_count each time it is called
 		//alert("cold_count is " + cold_count); I wanted to add further clarify that the alert is displaying the count for cold_count, but this code is now irrelevant
         }
 
 	function outputResults(){
-		var percent_allergy = allergy_count/(allergy_count + cold_count)*100; // This line converts the allergy_count into a percentage
-		var percent_cold = cold_count/(allergy_count + cold_count)*100; // This line converts the cold_count into a percentage
+		var percent_heartburn = heartburn_count/(heartburn_count + heartattack_count)*100; // This line converts the allergy_count into a percentage
+		var percent_heartattack = heartattack_count/(heartburn_count + heartattack_count)*100; // This line converts the cold_count into a percentage
 		var resultsText = document.getElementById("resultsLocation"); // creates a java script link between the variable called "resultsText" and the page element with id of resultsLocation
-		resultsLocation.innerHTML = "Probability it is allergies = " + percent_allergy + "% <br> Probability it is a cold = " + percent_cold + "%" //This line replaces the text from the Results Page with the diagnosis
+		resultsLocation.innerHTML = "Probability it is heartburn = " + percent_heartburn + "% <br> Probability it is a heart attack = " + percent_heartattack + "%" //This line replaces the text from the Results Page with the diagnosis
 	}
 
   </script>
@@ -62,7 +62,9 @@ Known Issues:
 .body {
      margin: 0em;
 }
-
+.w3-container h1 {
+	font-family: 'Georgia', serif;
+}
 .page {
     width: 100vw;
     height: 100vh;
@@ -71,7 +73,7 @@ Known Issues:
     left: -100vw;
     overflow-y: auto;
     z-index: 0;
-    background-color: hsl(0,0%,100%);
+    background-color: hsl(0, 67%, 93%);
 }
 
   .page:target {
@@ -81,14 +83,14 @@ Known Issues:
 </style>
 
 <body>
-<div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1> 
+<div id="header" class="w3-container w3-flat-pomegranate">
+	<h1>Heartburn or Heart Attack?</h1> 
 </div>
 <!--this section displays the content that the user sees immediately upon opening the website-->
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p> <!--Introduce the user to the website-->
+	<p>Do you feel chest pain and wonder if it is heartburn or a heart attack? Answer a few short questions to find out!</p> <!--Introduce the user to the website-->
 
-	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!-- this line presents the first button that users click to proceed to page one-->
+	<a href="#one" class="w3-btn w3-flat-alizarin w3-round"> Get Started </a> <!-- this line presents the first button that users click to proceed to page one-->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -97,96 +99,96 @@ Known Issues:
 	
 <!-- this section displays Page for Question 1 and gives user the yes/no options-->
 <div class="page" id="one">
-	<div id="header" class="w3-container w3-flat-carrot"> <!--creating the header for Q1-->
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!--creating the header for Q1-->
 		<h1>Question 1</h1>
 	</div>
 	
     	<div id="content" class="w3-container"> <!--creating the question and buttons for Q1-->
-		<p>Are your eyes watery or itchy?</p> <!--I asked the question for Question 1 (Q1) here.-->  
-		<a href="#two" onclick="allergyAdd();" class="w3-btn w3-orange"> Watery </a> <!-- Create Yes (Watery) button for Q1. If clicked, adds one to allergy_count-->
-		<a href="#two" onclick="coldAdd();" class="w3-btn w3-orange"> Itchy </a> <!-- Create No (Itchy) button for Q1. If clicked, adds one to cold_count-->
+		<p>Do you feel a burning sensation or a presssure sensation?</p> <!--I asked the question for Question 1 (Q1) here.-->  
+		<a href="#two" onclick="heartburnAdd();" class="w3-btn w3-flat-alizarin"> Burning </a> <!-- Create Yes (Watery) button for Q1. If clicked, adds one to allergy_count-->
+		<a href="#two" onclick="heartattackAdd();" class="w3-btn w3-flat-alizarin"> Pressure </a> <!-- Create No (Itchy) button for Q1. If clicked, adds one to cold_count-->
 	</div>
 </div>
 	
 <!-- this section displays page for Question 2 and gives user the yes/no options-->
 <div class="page" id="two">
-	<div id="header" class="w3-container w3-flat-carrot"> <!--creating the header for Q2-->
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!--creating the header for Q2-->
 		<h1>Question 2</h1>
 	</div>
 	
 	<div id="content" class="w3-container"> <!--creating the question and buttons for Q2-->
-		<p>Do you have a fever?</p> <!--I asked the question for Q2 here.--> 
-		<a href="#three" onclick="coldAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q2. If clicked, adds one to cold_count-->
-		<a href="#three" onclick="allergyAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q2. If clicked, adds one to allergy_count-->
+		<p>Is the pain only in your chest or has it radiated to the neck, jaw, back, or arms??</p> <!--I asked the question for Q2 here.--> 
+		<a href="#three" onclick="heartburnAdd();" class="w3-btn w3-flat-alizarin"> Only in chest </a> <!-- Create Yes button for Q2. If clicked, adds one to cold_count-->
+		<a href="#three" onclick="heartattackAdd();" class="w3-btn w3-flat-alizarin"> Radiated </a> <!-- Create No button for Q2. If clicked, adds one to allergy_count-->
 	</div>
 </div>	
 	
 <!-- this section displays page for Question 3 and gives user the yes/no options-->
 <div class="page" id="three">
-	<div id="header" class="w3-container w3-flat-carrot"> <!--creating the header for Q3-->
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!--creating the header for Q3-->
 		<h1>Question 3</h1>
 	</div>
 
 	<div id="content" class="w3-container"> <!--creating the question and buttons for Q3-->
-		<p>Do you have a sore throat?</p> <!--I asked the question for Q3 here.--> 
-		<a href="#four" onclick="coldAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q3. If clicked, adds one to cold_count-->
-		<a href="#four" onclick="allergyAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q3. If clicked, adds one to allergy_count-->
+		<p>Did the pain occur after eating or after physical exertion?</p> <!--I asked the question for Q3 here.--> 
+		<a href="#four" onclick="heartburnAdd();" class="w3-btn w3-flat-alizarin"> After eating </a> <!-- Create Yes button for Q3. If clicked, adds one to cold_count-->
+		<a href="#four" onclick="heartattackAdd();" class="w3-btn w3-flat-alizarin"> After physical exertion </a> <!-- Create No button for Q3. If clicked, adds one to allergy_count-->
 	</div>
 </div>
 	
 <!-- this section displays Page for Question 4 and gives user the yes/no options-->
 <div class="page" id="four">
-	<div id="header" class="w3-container w3-flat-carrot"> <!-- creating the header for Q4-->
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!-- creating the header for Q4-->
 		<h1>Question 4</h1>
 	</div>
 
 	<div id="content" class="w3-container">
-		<p>Are your symptoms seasonal or chronic?</p> <!--I asked the question for Q4 here.--> 
-		<a href="#five" onclick="allergyAdd();" class="w3-btn w3-orange"> Seasonal </a> <!-- Create Yes (Seasonal) button for Q4. If clicked, adds one to allergy_count-->
-		<a href="#five" onclick="coldAdd();" class="w3-btn w3-orange"> Chronic </a> <!-- Create No (Chronic) button for Q4. If clicked, adds one to cold_count-->
+		<p>Did pain resolve with antacids?</p> <!--I asked the question for Q4 here.--> 
+		<a href="#five" onclick="heartburnAdd();" class="w3-btn w3-flat-alizarin"> Yes </a> <!-- Create Yes (Seasonal) button for Q4. If clicked, adds one to allergy_count-->
+		<a href="#five" onclick="heartattackAdd();" class="w3-btn w3-flat-alizarin"> No </a> <!-- Create No (Chronic) button for Q4. If clicked, adds one to cold_count-->
 	</div>
 </div>
 
 <!-- this section displays Page for Question 5 and gives user the yes/no options-->
 <div class="page" id="five">
-	<div id="header" class="w3-container w3-flat-carrot"> <!-- creating the header for Q5-->
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!-- creating the header for Q5-->
 		<h1>Question 5</h1>
 	</div>
 
 	<div id="content" class="w3-container">
-		<p>Do you have skin rashes? </p> <!--I asked the question for Q5 here.-->
-		<a href="#six" onclick="allergyAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q5. If clicked, adds one to allergy_count-->
-		<a href="#six" onclick="coldAdd();" class="w3-btn w3-orange"> No </a> <!-- Create No button for Q5. If clicked, adds one to cold_count-->
+		<p>Do you have shortness of breath, cold sweats, dizziness, or nausea? </p> <!--I asked the question for Q5 here.-->
+		<a href="#six" onclick="heartattackAdd();" class="w3-btn w3-flat-alizarin"> Yes </a> <!-- Create Yes button for Q5. If clicked, adds one to allergy_count-->
+		<a href="#six" onclick="heartburnAdd();" class="w3-btn w3-flat-alizarin"> No </a> <!-- Create No button for Q5. If clicked, adds one to cold_count-->
 	</div>
 </div>
 
 <!-- this section displays Page for Question 6 and gives user the yes/no options-->
 <div class="page" id="six">
-	<div id="header" class="w3-container w3-flat-carrot"> <!-- creating the header for Q6-->
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!-- creating the header for Q6-->
 		<h1>Question 6</h1>
 	</div>
 
 	<div id="content" class="w3-container"> <!-- creating the content for Q6-->
-		<p>Do you have a stuffy nose?</p> <!--I asked the question for Q6 here.-->
-		<a href="#seven" onclick="coldAdd();" class="w3-btn w3-orange"> Yes </a> <!-- Create Yes button for Q6. If clicked, adds one to cold_count-->
-		<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-orange"> No </a> <!-- Create Yes button for Q6. If clicked, adds one to allergy_count-->
+		<p>Do you have a sour taste in your mouth?</p> <!--I asked the question for Q6 here.-->
+		<a href="#seven" onclick="heartburnAdd();" class="w3-btn w3-flat-alizarin"> Yes </a> <!-- Create Yes button for Q6. If clicked, adds one to cold_count-->
+		<a href="#seven" onclick="heartattackAdd();" class="w3-btn w3-flat-alizarin"> No </a> <!-- Create Yes button for Q6. If clicked, adds one to allergy_count-->
 	</div>
 </div>
 
 <!-- this section displays Page for Results and gives user the computer results option-->
 <div class="page" id="seven">
-	<div id="header" class="w3-container w3-flat-carrot"> <!-- header for the results page-->
+	<div id="header" class="w3-container w3-flat-pomegranate"> <!-- header for the results page-->
 		<h1>Results Page</h1>
 	</div>
 
 	<div id="content" class="w3-container">
 		<p id="resultsLocation">Press on the button below to see your results!</p> <!--This paragraph should be converted to the diagnosis statement after clicking on the results button-->
-		<a href="#seven" onclick="outputResults();"  class="w3-btn w3-orange">Click Here for Results!</a> <!--This is the Results Button. Pressing on it should change the text-->
+		<a href="#seven" onclick="outputResults();"  class="w3-btn w3-flat-alizarin">Click Here for Results!</a> <!--This is the Results Button. Pressing on it should change the text-->
 	</div>
 </div>	
 	
 
-<footer class="w3-bottom w3-container w3-flat-carrot">
+<footer class="w3-bottom w3-container w3-flat-pomegranate">
 	<p>DIY!</p>
 </footer>
 
